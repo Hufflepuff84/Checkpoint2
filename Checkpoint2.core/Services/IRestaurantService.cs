@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RestaurantApi.Models;
+using CheckPoint2.core.Models;
 
-namespace BookApi.Services
+namespace Checkpoin2.core.Services
 {
-    public interface IBookService
+    public interface IRestaurantService
     {
         IEnumerable<Restaurant> GetAll();
         Restaurant Get(int id);

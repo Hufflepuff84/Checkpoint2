@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RestaurantApi.Services;
-using RestaurantApi.Models;
+using CheckPoint2.core.Services;
+using CheckPoint2.core.Models;
+using Checkpoin2.core.Services;
 
-namespace Restaurant.Controllers
+namespace Checkpoint2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class RestaurantsController : ControllerBase
     {
         // GET api/values
         private readonly IRestaurantService _restaurantService;
-        public BooksController(IRestaurant restaurantService)
+        public RestaurantsController(IRestaurantService restaurantService)
         {
             _restaurantService = restaurantService;
         }
@@ -46,9 +47,9 @@ namespace Restaurant.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Restaurant updatedRestaurant)
         {
-            var book = _restaurantService.Update(updatedRestaurant);
-            if (book == null) return BadRequest();
-            return Ok(book);
+            var restaurant = _restaurantService.Update(updatedRestaurant);
+            if (restaurant == null) return BadRequest();
+            return Ok(restaurant);
         }
 
         // DELETE api/values/5

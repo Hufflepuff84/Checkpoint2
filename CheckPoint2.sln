@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint2", "CheckPoint2\CheckPoint2.csproj", "{C5E64596-57EB-4EB0-BA2D-EADAB67B63A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckPoint2", "CheckPoint2\CheckPoint2.csproj", "{C5E64596-57EB-4EB0-BA2D-EADAB67B63A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckPoint2.Infrastructure", "CheckPoint2.Infrastructure\CheckPoint2.Infrastructure.csproj", "{6B477EDC-26A7-4EC4-9E4C-5333885BC044}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkpoint2.core", "Checkpoint2.core\Checkpoint2.core.csproj", "{EB632DCF-2507-48DC-ABF5-0FF6B91BBA9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C5E64596-57EB-4EB0-BA2D-EADAB67B63A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E64596-57EB-4EB0-BA2D-EADAB67B63A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5E64596-57EB-4EB0-BA2D-EADAB67B63A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B477EDC-26A7-4EC4-9E4C-5333885BC044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B477EDC-26A7-4EC4-9E4C-5333885BC044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B477EDC-26A7-4EC4-9E4C-5333885BC044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B477EDC-26A7-4EC4-9E4C-5333885BC044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB632DCF-2507-48DC-ABF5-0FF6B91BBA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB632DCF-2507-48DC-ABF5-0FF6B91BBA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB632DCF-2507-48DC-ABF5-0FF6B91BBA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB632DCF-2507-48DC-ABF5-0FF6B91BBA9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

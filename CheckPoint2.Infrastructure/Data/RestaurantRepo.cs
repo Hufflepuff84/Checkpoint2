@@ -2,32 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RestaurantApi.Data;
-using RestaurantApi.Models;
+using Checkpoin2.core.Services;
+using Checkpoint2.Infrastructure.Data;
+using CheckPoint2.core.Models;
 
-namespace RestaurantApi.Services
+
+namespace CheckPoint2.Infrastructure.Data
 {
 
-    public class BookService : IRestaurantService
+    public class RestaurantRepo : IRestaurantRepo
     {
         private readonly RestaurantContext _restaurantContext;
 
-        public BookService(RestaurantContext bookContext)
+        public RestaurantRepo(RestaurantContext RestaurantContext)
         {
-            _restaurantContext = bookContext;
+            _restaurantContext = RestaurantContext;
         }
         public IEnumerable<Restaurant> GetAll()
         {
-            return _restaurantContext.Books.ToList();
+            return _restaurantContext.Restaurants.ToList();
 
         }
         public Restaurant Get(int id)
         {
-            return _restaurantContext.Books.FirstOrDefault(b => b.Id == id);
+            return _restaurantContext.Restaurants.FirstOrDefault(b => b.Id == id);
         }
         public Restaurant Add(Restaurant restaurant)
         {
-            _restaurantContext.Books.Add(restaurant);
+            _restaurantContext.Restaurants.Add(restaurant);
             _restaurantContext.SaveChanges();
             return restaurant;
         }
@@ -37,13 +39,13 @@ namespace RestaurantApi.Services
             if (currentRestaurant == null) return null;
             _restaurantContext.Entry(currentRestaurant).CurrentValues
                 .SetValues(updatedRestaurant);
-            _restaurantContext.Books.Update(currentRestaurant);
+            _restaurantContext.Restaurants.Update(currentRestaurant);
             _restaurantContext.SaveChanges();
             return currentRestaurant;
         }
         public void Remove(Restaurant restaurant)
         {
-            _restaurantContext.Books.Remove(restaurant);
+            _restaurantContext.Restaurants.Remove(restaurant);
             _restaurantContext.SaveChanges();
 
         }

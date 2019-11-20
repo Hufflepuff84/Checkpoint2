@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RestaurantApi.Migrations
+namespace CheckPoint2.Migrations
 {
     public partial class InitialCreate : Migration
     {

@@ -3,11 +3,58 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp2.2</TargetFramework>
 		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+		<ApplicationIcon />
+		<OutputType>Exe</OutputType>
+		<StartupObject />
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.App" />
-		<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.0" />
+	  <Compile Remove="bin\Debug\netcoreapp3.0\**" />
+	  <Compile Remove="obj\Debug\netcoreapp3.0\**" />
+	  <Content Remove="bin\Debug\netcoreapp3.0\**" />
+	  <Content Remove="obj\Debug\netcoreapp3.0\**" />
+	  <EmbeddedResource Remove="bin\Debug\netcoreapp3.0\**" />
+	  <EmbeddedResource Remove="obj\Debug\netcoreapp3.0\**" />
+	  <None Remove="bin\Debug\netcoreapp3.0\**" />
+	  <None Remove="obj\Debug\netcoreapp3.0\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="obj\Debug\netcoreapp2.2\CheckPoint2.AssemblyInfo.cs" />
+	  <Compile Include="obj\Debug\netcoreapp2.2\CheckPoint2.RazorAssemblyInfo.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="obj\CheckPoint2.csproj.nuget.dgspec.json" />
+	  <Content Include="obj\Debug\netcoreapp2.2\CheckPoint2.csproj.FileListAbsolute.txt" />
+	  <Content Include="obj\project.assets.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\netcoreapp2.2\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="obj\CheckPoint2.csproj.nuget.cache" />
+	  <None Include="obj\CheckPoint2.csproj.nuget.g.props" />
+	  <None Include="obj\CheckPoint2.csproj.nuget.g.targets" />
+	  <None Include="obj\Debug\netcoreapp2.2\CheckPoint2.AssemblyInfoInputs.cache" />
+	  <None Include="obj\Debug\netcoreapp2.2\CheckPoint2.assets.cache" />
+	  <None Include="obj\Debug\netcoreapp2.2\CheckPoint2.csprojAssemblyReference.cache" />
+	  <None Include="obj\Debug\netcoreapp2.2\CheckPoint2.RazorAssemblyInfo.cache" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Checkpoint2.core\Checkpoint2.core.csproj" />
+	  <ProjectReference Include="..\CheckPoint2.Infrastructure\CheckPoint2.Infrastructure.csproj" />
 	</ItemGroup>
 </Project>

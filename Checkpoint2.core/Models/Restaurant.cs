@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurant.Models
+namespace CheckPoint2.core.Models
 {
     public class Restaurant
     {

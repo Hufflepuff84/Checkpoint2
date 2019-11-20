@@ -1,19 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using RestaurantApi.Data;
-using RestaurantApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using Checkpoint2.Infrastructure.Data;
+using Checkpoin2.core.Services;
+using CheckPoint2.core.Services;
+using CheckPoint2.Infrastructure.Data;
 
-namespace RestaurantApi
+namespace CheckPoint2
 {
     public class Startup
     {
@@ -28,8 +24,12 @@ namespace RestaurantApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+
             services.AddDbContext<RestaurantContext>();
+            services.AddScoped<IRestaurantRepo, RestaurantRepo>();
             services.AddScoped<IRestaurantService, RestaurantService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,4 +49,6 @@ namespace RestaurantApi
             app.UseMvc();
         }
     }
+
+   
 }

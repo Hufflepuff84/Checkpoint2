@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RestaurantApi.Models;
+using CheckPoint2.core.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 
-namespace BookApi.Data // CS321_W3D1_BookAPI.Data
+namespace Checkpoint2.Infrastructure.Data // CS321_W3D1_RestaurantAPI.Data
 {
-    public class BookContext : DbContext
-    {// TODO: implement a DbSet<Book> property
+    public class RestaurantContext : IdentityDbContext
+    {// TODO: implement a DbSet<Restaurant> property
         public DbSet<Restaurant> Restaurants { get; set; }
 
         // This method runs once when the DbContext is first used.
@@ -26,9 +27,9 @@ namespace BookApi.Data // CS321_W3D1_BookAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // TODO: configure some seed data in the books table
+            // TODO: configure some seed data in the Restaurants table
 
-            modelBuilder.Entity<Restaurants>().HasData(
+            modelBuilder.Entity<Restaurant>().HasData(
                 new Restaurant { Id = 1, Name = "Great Tacos", Owner = "Bob Martinez", Type = "Mexican" },
                 new Restaurant { Id = 2, Name = "Delicious Thai Meals", Owner = "Michael Khan", Type = "Thai" },
                 new Restaurant { Id = 3, Name = "South Asian Treats", Owner = "Raj Biswanathan", Type = "Indian" }
